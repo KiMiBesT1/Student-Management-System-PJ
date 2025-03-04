@@ -37,28 +37,4 @@ class Student:
         for course, attend in self.attendance.items():
             print(f"- {course}: {attend} times")
 
-class StudentManagementSystem:
-    def __init__(self):
-        self.students = {}
-
-    def register_student(self, name, email, password):
-        self.students[email] = Student(name, email, password)
-
-    def login_student(self, email, password):
-        if email in self.students and self.students[email].password == password:
-            return self.students[email]
-        else:
-            return None
-
-def main():
-    sms = StudentManagementSystem()
-
-    while True:
-        print("1. Register Student")
-        print("2. Login Student")
-        print("3. Register Course")
-        print("4. Update Grade")
-        print("5. Mark Attendance")
-        print("6. Display Student Info")
-        print("7. Exit")
 
