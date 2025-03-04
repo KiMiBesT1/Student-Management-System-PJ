@@ -37,4 +37,29 @@ class Student:
         for course, attend in self.attendance.items():
             print(f"- {course}: {attend} times")
 
+class StudentManagementSystem:
+    def __init__(self):
+        self.students = {}
 
+    def add_student(self, name, email, password):
+        if email in self.students:
+            print("Student with this email already exists.")
+        else:
+            self.students[email] = Student(name, email, password)
+            print(f"Student {name} added successfully!")
+
+    def view_students(self):
+        if not self.students:
+            print("No students available.")
+        else:
+            print("Student List:")
+            for student in self.students.values():
+                print(student)
+
+    def update_student(self, email, name=None, password=None):
+        if email in self.students:
+            if name:
+                self.students[email].name = name
+            if password:
+                self.students[email].password = password
+            print(f"Student with email {email} updated successfully!")
