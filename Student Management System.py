@@ -73,28 +73,26 @@ def main():
     while True:
         print("\nStudent Management System")
         print("1. Add Student")
-        print("2. View Students")
-        print("3. Update Student")
-        print("4. Delete Student")
-        print("5. Login as Student")
-        print("6. Exit")
+        print("2. Update Student")
+        print("3. Delete Student")
+        print("4. Login as Student")
+        print("5. Exit")
         choice = input("Enter your choice: ")
         if choice == "1":
             name = input("Enter student name: ")
             email = input("Enter student email: ")
             password = input("Enter student password: ")
             sms.add_student(name, email, password)
-        elif choice == "2":
             sms.view_students()
-        elif choice == "3":
+        elif choice == "2":
             email = input("Enter student email to update: ")
             name = input("Enter new name (leave blank to keep unchanged): ")
             password = input("Enter new password (leave blank to keep unchanged): ")
             sms.update_student(email, name if name else None, password if password else None)
-        elif choice == "4":
+        elif choice == "3":
             email = input("Enter student email to delete: ")
             sms.delete_student(email)
-        elif choice == "5":
+        elif choice == "4":
             email = input("Enter student email: ")
             password = input("Enter student password: ")
             student = sms.login_student(email, password)
@@ -130,7 +128,7 @@ def main():
                         print("Invalid choice. Please try again.")
             else:
                 print("Invalid email or password.")
-        elif choice == "6":
+        elif choice == "5":
             print("Exiting the system. Goodbye!")
             break
         else:
