@@ -68,6 +68,7 @@ class StudentManagementSystem:
             return self.students[email]
         else:
             return None
+        
 def main():
     sms = StudentManagementSystem()
     while True:
