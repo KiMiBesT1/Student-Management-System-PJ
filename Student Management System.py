@@ -41,13 +41,6 @@ class StudentManagementSystem:
         else:
             self.students[email] = Student(name, email, password)
             print(f"Student {name} added successfully!")
-    def view_students(self):
-        if not self.students:
-            print("No students available.")
-        else:
-            print("Student List:")
-            for student in self.students.values():
-                print(student)
     def update_student(self, email, name=None, password=None):
         if email in self.students:
             if name:
@@ -84,7 +77,6 @@ def main():
             email = input("Enter student email: ")
             password = input("Enter student password: ")
             sms.add_student(name, email, password)
-            sms.view_students()
         elif choice == "2":
             email = input("Enter student email to update: ")
             name = input("Enter new name (leave blank to keep unchanged): ")
